@@ -153,6 +153,8 @@ GEM
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rake (10.5.0)
+    shoulda-matchers (3.0.1)
+      activesupport (>= 4.0.0)
     spring (1.6.3)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -184,6 +186,7 @@ DEPENDENCIES
   rspec-mocks!
   rspec-rails!
   rspec-support!
+  shoulda-matchers
   spring
   tzinfo-data
 
