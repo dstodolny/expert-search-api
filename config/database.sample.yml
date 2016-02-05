@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: expert-search-api_development
+
+test:
+  <<: *default
+  database: expert-search-api_test
+
+production:
+  <<: *default
+  database: expert-search-api_production
+  username: expert-search-api
+  password: <%= ENV['EXPERT-SEARCH-API_DATABASE_PASSWORD'] %>
