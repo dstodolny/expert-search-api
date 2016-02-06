@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/hashrocket/decent_exposure.git
+  revision: c4df788d25f0f353e9c60d6036676cf97adac0a8
+  specs:
+    decent_exposure (2.3.3)
+
+GIT
   remote: git://github.com/rails-api/active_model_serializers.git
   revision: f32c0d97d5a3a609979b57655e107f678470fdaa
   specs:
@@ -188,6 +194,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers!
   byebug
+  decent_exposure!
   factory_girl_rails
   faker
   pg (~> 0.18)
