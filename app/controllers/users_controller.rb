@@ -11,10 +11,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    if user.save
+    user_service = UserCreator.new(user_params)
+    if user_service.create
       render json: user, status: :created
     else
-      render json: { errors: user.errors }, status: :unprocessable_entity
+      render json: { errors: user_service.errors }, status: :unprocessable_entity
     end
   end
 
