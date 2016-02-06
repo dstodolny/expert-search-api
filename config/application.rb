@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+require File.expand_path('../initializers/decent_exposure', __FILE__)
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
