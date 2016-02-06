@@ -5,38 +5,30 @@ describe "Users API", kind: :request do
   let(:user_keys) { %w(name) }
 
   describe "GET /users" do
-    before do
+    it "sends a list of users" do
       create_list(:user, 3)
+
       get "/users"
-    end
 
-    it "responds with the correct status" do
-      expect(response.status).to eq(200)
-    end
-
-    it "returns all users" do
+      expect(response).to be_success
       expect(api_response.length).to eq(3)
     end
   end
 
   describe "GET /users/:id" do
-    let(:user) { create(:user) }
+    it "retrieves a specific user" do
+      user = create(:user)
 
-    before do
       get "/users/#{user.id}"
-    end
 
-    it "responds with the correct status" do
-      expect(response.status).to eq(200)
-    end
-
-    it "has the correct keys in the response body" do
-      expect(api_response['attributes'].keys).to contain_exactly(*user_keys)
+      expect(response).to be_success
+      expect(api_response["attributes"]["name"]).to eq(user.name)
+      expect(api_response["attributes"].keys).to contain_exactly(*user_keys)
     end
   end
 
   describe "POST /users" do
-    before do
+    it "creates a user" do
       post "/users", {
         params: {
           data: {
@@ -47,13 +39,9 @@ describe "Users API", kind: :request do
           }
         }
       }
-    end
 
-    it "creates a user" do
-      expect(response.status).to eq(201)
-    end
-
-    it "has the correct keys in the response body" do
+      expect(response).to have_http_status(:created)
+      expect(api_response["attributes"]["name"]).to eq("John")
       expect(api_response['attributes'].keys).to contain_exactly(*user_keys)
     end
   end
