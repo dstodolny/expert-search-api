@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe UserCreator do
+  let(:shorten) { double(short_url: "http://bit.ly/123") }
+
+  before do
+    allow(Bitly).to receive_message_chain(:client, :shorten)
+    .with("http://example.com").and_return(shorten)
+  end
+
   context "with valid params" do
     let(:valid_params) { { name: "John", url: "http://example.com" } }
 
