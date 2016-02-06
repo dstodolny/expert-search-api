@@ -8,7 +8,7 @@ gem 'pg', '~> 0.18'
 gem 'puma'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry'
   gem 'rspec', github: 'rspec/rspec'
   gem 'rspec-mocks', github: 'rspec/rspec-mocks'
   gem 'rspec-expectations', github: 'rspec/rspec-expectations'
