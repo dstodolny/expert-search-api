@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Users API", kind: :request do
   let(:api_response) { json['data'] }
-  let(:user_keys) { %w(name) }
+  let(:user_keys) { %w(name url) }
 
   describe "GET /users" do
     it "sends a list of users" do
@@ -23,6 +23,7 @@ describe "Users API", kind: :request do
 
       expect(response).to be_success
       expect(api_response["attributes"]["name"]).to eq(user.name)
+      expect(api_response["attributes"]["url"]).to eq(user.url)
       expect(api_response["attributes"].keys).to contain_exactly(*user_keys)
     end
   end
@@ -34,7 +35,8 @@ describe "Users API", kind: :request do
           data: {
             type: "users",
             attributes: {
-              name: "John"
+              name: "John",
+              url: "http://example.com"
             }
           }
         }
@@ -42,6 +44,7 @@ describe "Users API", kind: :request do
 
       expect(response).to have_http_status(:created)
       expect(api_response["attributes"]["name"]).to eq("John")
+      expect(api_response["attributes"]["url"]).to eq("http://example.com")
       expect(api_response['attributes'].keys).to contain_exactly(*user_keys)
     end
   end
