@@ -7,12 +7,15 @@ describe User do
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:url) }
+  it { is_expected.to respond_to(:short_url) }
 
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_presence_of(:url) }
 
   it { is_expected.to allow_value("http://example.com").for(:url) }
   it { is_expected.not_to allow_value("example.com").for(:url) }
+  it { is_expected.to allow_value("http://example.com").for(:short_url) }
+  it { is_expected.not_to allow_value("example.com").for(:short_url) }
 
   it { is_expected.to have_many(:headers) }
 end

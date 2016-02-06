@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Users API", kind: :request do
   let(:api_response) { json['data'] }
-  let(:user_keys) { %w(name url) }
+  let(:user_keys) { %w(name url short_url) }
 
   describe "GET /users" do
     it "sends a list of users" do
