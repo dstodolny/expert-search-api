@@ -13,4 +13,6 @@ describe User do
 
   it { is_expected.to allow_value("http://example.com").for(:url) }
   it { is_expected.not_to allow_value("example.com").for(:url) }
+
+  it { is_expected.to have_many(:headers) }
 end
