@@ -6,7 +6,7 @@ describe "Users API", kind: :request do
 
   describe "GET /users" do
     before do
-      3.times { create(:user) }
+      create_list(:user, 3)
       get "/users"
     end
 
