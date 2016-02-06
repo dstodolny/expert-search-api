@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  validates_presence_of :name, :url
+  validates :name, presence: true
+  validates :url, presence: true, url: true
 end
