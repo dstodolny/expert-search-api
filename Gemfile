@@ -4,6 +4,7 @@ gem 'rails', github: "rails/rails"
 gem 'active_model_serializers', github: "rails-api/active_model_serializers"
 gem 'decent_exposure', github: "hashrocket/decent_exposure"
 gem "validate_url"
+gem "mechanize"
 
 gem 'pg', '~> 0.18'
 gem 'puma'
