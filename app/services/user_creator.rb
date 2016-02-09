@@ -1,4 +1,6 @@
 class UserCreator
+  attr_reader :user
+
   def initialize(params)
     @user = User.new(params)
   end

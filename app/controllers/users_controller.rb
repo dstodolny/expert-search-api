@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     user_service = UserCreator.new(user_params)
     if user_service.create
-      render json: user, status: :created
+      render json: user_service.user, status: :created
     else
       render json: { errors: user_service.errors }, status: :unprocessable_entity
     end
