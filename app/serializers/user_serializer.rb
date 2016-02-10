@@ -1,7 +1,6 @@
 class UserSerializer < ApplicationSerializer
-  attributes :name, :url, :short_url, :friends_ids
+  attributes :id, :name, :url, :short_url
 
-  def friends_ids
-    object.friends.pluck(:id)
-  end
+  has_many :headers
+  has_many :friends, include: true, root: :users
 end
