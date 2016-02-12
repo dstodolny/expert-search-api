@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe UserQuery do
+describe Users::SelectQuery do
   let!(:user_1) { create(:user, name: "ABCD") }
   let!(:user_2) { create(:user, name: "EFGH") }
   let!(:user_3) { create(:user, name: "IJKL") }

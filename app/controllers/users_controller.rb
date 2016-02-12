@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:for_select].present?
-      render json: ::UserQuery.new(params).query
+      render json: ::Users::SelectQuery.new(params).query
     else
       render json: users
     end
