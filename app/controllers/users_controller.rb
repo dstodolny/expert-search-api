@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   expose(:user, attributes: :user_params)
 
   def index
-    render json: users
+    if params[:for_select].present?
+      render json: ::UserQuery.new(params).query
+    else
+      render json: users
+    end
   end
 
   def show
