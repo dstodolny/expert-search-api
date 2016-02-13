@@ -1,4 +1,6 @@
 # Expert Search API
+**This is the API for the Expert Search application. If you want to see the frontend application, go [here](http://github.com/dstodolny/expert-search.git)**
+
 Expert Search is a simple expert search tool that allows you to add and search for experts. The application meets the following specifications:
 
 - You enter a name and a personal website address and an expert is created.
@@ -9,7 +11,10 @@ Expert Search is a simple expert search tool that allows you to add and search f
 - Viewing an actual expert displays the name, website URL, shortening, website headings, and links to their connected experts' pages.
 - Looking at someone's profile, you can query for experts in the application who write about a certain topic that are not already in direct connection with the viewed person. Results shows the **path of introduction** from the viewed person to the expert.
 
-*Alan wants to get introduced to someone who writes about 'Dog breeding'. Claudia's website has a heading tag "Dog breeding in Ukraine". Bart knows Alan and Claudia. An example search result would be Alan -> Bart -> Claudia ("Dog breeding in Ukraine").*
+ *Alan wants to get introduced to someone who writes about 'Dog breeding'. Claudia's website has a heading tag "Dog breeding in Ukraine". Bart knows Alan and Claudia. An example search result would be Alan -> Bart -> Claudia ("Dog breeding in Ukraine").*
+
+## Live demo
+If you would like to see a demo, go [here](https://radiant-dawn-97399.herokuapp.com/)
 
 ## Technology stack
 
@@ -56,7 +61,7 @@ To launch local HTTP server on port 3000:
 ```
 rails server
 ```
-Make sure to check out the [fronted repo](http://github.com/dstodolny/expert-search.git)
+Frontend application, setup guide provided [here](http://github.com/dstodolny/expert-search.git)
 
 ## Tests
 To run all tests type:
