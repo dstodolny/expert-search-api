@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/cyu/rack-cors.git
+  revision: df0fb16018ff348b158a2adbe903d0669e574627
+  specs:
+    rack-cors (0.4.0)
+
+GIT
   remote: git://github.com/hashrocket/decent_exposure.git
   revision: c4df788d25f0f353e9c60d6036676cf97adac0a8
   specs:
@@ -254,6 +260,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pry
   puma
+  rack-cors!
   rails!
   rails_12factor
   rspec!

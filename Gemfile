@@ -6,10 +6,14 @@ gem 'decent_exposure', github: "hashrocket/decent_exposure"
 gem "validate_url"
 gem "mechanize"
 gem "bitly"
+gem "rack-cors", github: "cyu/rack-cors"
 
 gem 'pg', '~> 0.18'
-gem 'rails_12factor'
 gem 'puma'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'pry'
