@@ -7,13 +7,8 @@ describe Users::SelectQuery do
   let!(:user_4) { create(:user, name: "MNOP") }
   let!(:user_5) { create(:user, name: "QRST") }
 
-  let!(:friendship_1) do
-    create(:friendship, user_id: user_1.id, friend_id: user_2.id)
-  end
-
-  let!(:firendship_2) do
-    create(:friendship, user_id: user_3.id, friend_id: user_1.id)
-  end
+  let!(:friendship_1) { create(:friendship, user: user_1, friend: user_2) }
+  let!(:firendship_2) { create(:friendship, user: user_3, friend: user_1) }
 
   subject { described_class.new(params).query }
 
