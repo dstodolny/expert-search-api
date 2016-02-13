@@ -8,6 +8,7 @@ gem "mechanize"
 gem "bitly"
 
 gem 'pg', '~> 0.18'
+gem 'rails_12factor'
 gem 'puma'
 
 group :development, :test do
